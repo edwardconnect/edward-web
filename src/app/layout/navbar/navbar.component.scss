@@ -2,9 +2,27 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding:8px 20px;
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 0;
 
-    .navbar__item {
-        font-size: medium;
+    .nav__logo {
+        color: white;
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    .nav__item__container {
+        .nav__item {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: medium;
+            margin-left: 5px;
+        }
     }
 }

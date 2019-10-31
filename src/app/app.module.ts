@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EntitiesModule } from './entities/entities.module';
 import { LayoutModule } from './layout/layout.module';
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,14 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     AppRoutingModule,
     EntitiesModule,
-    LayoutModule
+    LayoutModule,
+    CloudinaryModule.forRoot({ Cloudinary }, {
+      cloud_name: 'doyouvwrh'
+  } as CloudinaryConfiguration),
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

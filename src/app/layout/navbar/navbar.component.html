@@ -1,3 +1,6 @@
 <nav class="navbar">
-    <a *ngFor="let it of navbarItems" href="#" [routerLink]="[it.routerLink]" class="navbar__item">{{it.name}}</a>
+    <span class="nav__logo">EDWARD</span>
+    <div class="nav__item__container">
+        <button *ngFor="let it of navbarItems" href="#" [routerLink]="[it.routerLink]" class="nav__item">{{it.name}}</button>
+    </div>
 </nav>
