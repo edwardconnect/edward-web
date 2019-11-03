@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   subscribeColorTheme() {
-    const selectTheme = theme => {
+    const selectTheme = (theme) => {
       this.bannerImg = theme === ColorTheme.Light ? this.bannerImgs.day : this.bannerImgs.night;
       this.theme = theme;
     }

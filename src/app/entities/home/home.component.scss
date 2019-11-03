@@ -1,5 +1,6 @@
 .banner__img {
   position: relative;
+  // padding: 0px 75px 50px 75px;
 
   img {
     width: 100%;
@@ -60,4 +61,16 @@
 
 .light-mode {
 
+}
+
+@media only screen and (max-width: 600px) {
+  .banner__img img {
+    height: 500px;
+    object-fit:cover;
+    object-position: 77%;
+  }
+
+  .banner__img__title {
+    font-size: xx-large;
+  }
 }

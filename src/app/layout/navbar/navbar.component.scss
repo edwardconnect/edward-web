@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 8px 20px;
-  position: absolute;
+  padding: 18px 0px;
+  // position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -50,5 +50,12 @@
     .theme-mode__btn--night {
       color: white;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 18px 15px;
+    position: fixed;
   }
 }

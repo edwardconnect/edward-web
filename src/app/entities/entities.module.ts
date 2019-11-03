@@ -6,9 +6,11 @@ import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5
 import { Cloudinary } from 'cloudinary-core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PhotoCategoryComponent } from './photo-category/photo-category.component';
+import { PhotoGalleryComponent } from './photo-category/photo-gallery/photo-gallery.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, PhotoCategoryComponent, PhotoGalleryComponent],
   imports: [
     CommonModule,
     CloudinaryModule.forRoot({ Cloudinary }, {

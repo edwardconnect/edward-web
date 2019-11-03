@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { ColorTheme } from './shared/models/color-theme.model';
 import { ColorThemeService } from './shared/services/color-theme.service';
 import { Subscription } from 'rxjs';
@@ -14,8 +14,10 @@ export class AppComponent implements OnInit, OnDestroy {
   colorThemeSub: Subscription;
 
   constructor(
-    private colorThemeService: ColorThemeService
+    private colorThemeService: ColorThemeService,
+    private elementRef: ElementRef
   ) { }
+
 
   ngOnInit() {
     this.subscribeColorThemeState();
@@ -27,6 +29,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   subscribeColorThemeState() {
     this.theme = this.colorThemeService.getColorTheme();
-    this.colorThemeSub = this.colorThemeService.getColorThemeState().subscribe(theme => this.theme = theme);
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.theme === 0 ? 'black' : '#E4E4E4';
+    this.colorThemeSub = this.colorThemeService.getColorThemeState().subscribe(theme => {
+      this.theme = theme;
+      this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.theme === 0 ? 'black' : '#E4E4E4';
+    });
   }
 }

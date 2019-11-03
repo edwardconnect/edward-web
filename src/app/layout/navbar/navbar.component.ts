@@ -16,10 +16,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
       name: 'Home',
       routerLink: '/'
     },
-    // {
-    //   name: 'Gallery',
-    //   routerLink: '/gallery'
-    // }
+    {
+      name: 'Photo',
+      routerLink: '/photo'
+    }
   ]
   faAdjust = faAdjust;
   colorThemeStateSub: Subscription;
