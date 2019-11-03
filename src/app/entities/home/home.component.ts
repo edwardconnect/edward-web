@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     day: 'https://res.cloudinary.com/doyouvwrh/image/upload/c_fill,h_1080,w_1920/v1572539504/edward-web/hk-day_u2891h'
   };
   bannerImg: string;
+  theme: ColorTheme;
   themeStateSub: Subscription;
+  showBannerTitle: boolean = true;
 
   constructor(
     private colorThemeService: ColorThemeService
@@ -32,6 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   subscribeColorTheme() {
     const selectTheme = theme => {
       this.bannerImg = theme === ColorTheme.Light ? this.bannerImgs.day : this.bannerImgs.night;
+      this.theme = theme;
     }
 
     selectTheme(this.colorThemeService.getColorTheme());
@@ -40,5 +43,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(theme => {
         selectTheme(theme);
       });
+  }
+
+  hideBannerTitle() {
+    this.showBannerTitle = false;
   }
 }

@@ -5,7 +5,7 @@
             'theme-mode__btn--day': colorTheme === 1,
             'theme-mode__btn--night': colorTheme === 0
           }" (click)="changeColorTheme()">
-            <fa-icon [icon]="faAdjust"></fa-icon>
+            <fa-icon class="theme__icon" [icon]="faAdjust"></fa-icon>
         </button>
         <button *ngFor="let it of navbarItems" href="#" [routerLink]="[it.routerLink]" class="nav__item">{{it.name}}</button>
     </div>

@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div [ngStyle]="{'background-color': theme === 0 ? 'black' : '#E4E4E4'}">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+</div>

@@ -1,44 +1,54 @@
 .navbar {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding:8px 20px;
-    position: absolute;
-    width: 100%;
-    top:0;
-    left: 0;
-    z-index: 999;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 20px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
 
-    .nav__logo {
-        color: white;
-        font-size: x-large;
-        font-weight: bold;
+  .nav__logo {
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .nav__item__container {
+    .nav__item {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: medium;
+      margin-left: 5px;
     }
 
-    .nav__item__container {
-        .nav__item {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: medium;
-            margin-left: 5px;
-        }
-
-        .theme-mode__btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: medium;
-        }
-
-        .theme-mode__btn--day {
-            color: black;
-        }
-
-        .theme-mode__btn--night {
-            color: white;
-        }
+    .theme-mode__btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: medium;
     }
+
+    .theme__icon {
+        border-radius: 50%;
+        transition: 0.2s ease-in-out;
+    }
+
+    .theme-mode__btn:hover .theme__icon {
+      box-shadow: 0px 0px 18px 1px rgba(255, 245, 105, 0.97);
+      transition: 0.2s ease-in-out;
+    }
+
+    .theme-mode__btn--day {
+      color: black;
+    }
+
+    .theme-mode__btn--night {
+      color: white;
+    }
+  }
 }
