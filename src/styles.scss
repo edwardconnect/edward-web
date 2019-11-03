@@ -7,3 +7,17 @@ body {
     margin:0; 
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+button,
+button:active,
+button:focus {
+    outline: none;
+}
+// img.ng-lazyloaded {
+//     animation: fadein .5s;
+// }
+
+// @keyframes fadein {
+//     from {opacity: 0;}
+//     to {opacity: 1;}
+// }

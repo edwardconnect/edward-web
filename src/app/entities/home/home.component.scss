@@ -1,8 +1,19 @@
-img {
+.banner__img {
+  img {
     width: 100%;
-    height: auto
-}
+    height: auto;
+  }
+  
+  img.ng-lazyloaded {
+    animation: fadein 0.9s;
+  }
 
-.test {
-    color: red;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

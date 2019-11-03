@@ -1,6 +1,12 @@
 <nav class="navbar">
     <span class="nav__logo">EDWARD</span>
     <div class="nav__item__container">
+        <button class="theme-mode__btn" [ngClass]="{
+            'theme-mode__btn--day': colorTheme === 1,
+            'theme-mode__btn--night': colorTheme === 0
+          }" (click)="changeColorTheme()">
+            <fa-icon [icon]="faAdjust"></fa-icon>
+        </button>
         <button *ngFor="let it of navbarItems" href="#" [routerLink]="[it.routerLink]" class="nav__item">{{it.name}}</button>
     </div>
 </nav>

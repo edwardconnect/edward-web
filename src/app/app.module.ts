@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EntitiesModule } from './entities/entities.module';
 import { LayoutModule } from './layout/layout.module';
+
 import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,12 @@ import { Cloudinary } from 'cloudinary-core';
     LayoutModule,
     CloudinaryModule.forRoot({ Cloudinary }, {
       cloud_name: 'doyouvwrh'
-  } as CloudinaryConfiguration),
+    } as CloudinaryConfiguration),
+    FontAwesomeModule
+    // LazyLoadImageModule
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,10 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * RouterModule.forRoot is like combining the previous route (same copy) and return the update module (same copy)
+ * or if a module want to add some params before inject
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

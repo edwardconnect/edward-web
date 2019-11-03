@@ -8,6 +8,7 @@
     width: 100%;
     top:0;
     left: 0;
+    z-index: 999;
 
     .nav__logo {
         color: white;
@@ -23,6 +24,21 @@
             cursor: pointer;
             font-size: medium;
             margin-left: 5px;
+        }
+
+        .theme-mode__btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: medium;
+        }
+
+        .theme-mode__btn--day {
+            color: black;
+        }
+
+        .theme-mode__btn--night {
+            color: white;
         }
     }
 }
