@@ -1,0 +1,7 @@
+<div class="cat">
+    <div *ngFor="let it of categories; let i = index" class="cat__item" [ngClass]="{'cat__item--middle': i === 1}">
+        <div class="cat__item__img__overlay"></div>
+        <img class="cat__item__img" src="{{it.photoUrl}}" alt="">
+        <div class="cat__item__title">{{it?.title}}</div>
+    </div>
+</div>
