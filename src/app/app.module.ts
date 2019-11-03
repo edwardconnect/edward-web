@@ -10,6 +10,8 @@ import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5
 import { Cloudinary } from 'cloudinary-core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CloudinaryModule.forRoot({ Cloudinary }, {
       cloud_name: 'doyouvwrh'
     } as CloudinaryConfiguration),
-    FontAwesomeModule
+    FontAwesomeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     // LazyLoadImageModule
   ],
   providers: [
