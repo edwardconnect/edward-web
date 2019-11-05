@@ -1,1 +1,7 @@
-<p>photo-gallery works!</p>
+<div *ngIf="galleryPhoto && galleryPhoto.length > 0" class="gallery-container">
+    <div *ngFor="let photo of galleryPhoto" class="gallery__img__container">
+        <img class="gallery__img" [ngClass]="{'gallery__img--hidden': photo.isOpen}" src="{{photoUrl + photo.id}}" alt="" (click)="test($event)">
+        <img *ngIf="photo.isOpen" class="gallery__img--modal" src="{{photoUrl + photo.id}}" alt=""
+            (click)="closeModal(photo)">
+    </div>
+</div>
