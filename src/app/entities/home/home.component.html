@@ -1,15 +1,17 @@
 <div class="banner__img">
     <!-- <img src="https://res.cloudinary.com/doyouvwrh/image/upload/c_fill,h_1080,w_1920/v1572539504/edward-web/hk_protest_dluor1" alt=""> -->
-    <img [lazyLoad]="bannerImg">
-    <div class="banner__img__title" [ngClass]="{'banner__img__title--show': showBannerTitle, 'banner__img__title--hide': !showBannerTitle}"
+    <img [lazyLoad]="bannerImg" (onLoad)="print()">
+    <div *ngIf="isImgLoaded === true" class="banner__img__title" [ngClass]="{'banner__img__title--show': showBannerTitle, 'banner__img__title--hide': !showBannerTitle}"
         (click)="hideBannerTitle()">
         Hi, I'm Edward 😃
     </div>
 </div>
-<div [ngClass]="{'dark-mode': theme === 0, 'light-mode': theme === 1}">
-    <section class="info-card__section">
-        <div class="info-card">
-            I love computer science.
-        </div>
-    </section>
-</div>
+<ng-container *ngIf="isImgLoaded === true">
+    <div [ngClass]="{'dark-mode': theme === 0, 'light-mode': theme === 1}">
+        <section class="info-card__section">
+            <div class="info-card">
+                I love computer science.
+            </div>
+        </section>
+    </div>
+</ng-container>

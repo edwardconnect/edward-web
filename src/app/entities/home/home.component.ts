@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ColorTheme } from 'src/app/shared/models/color-theme.model';
 import { ColorThemeService } from 'src/app/shared/services/color-theme.service';
 import { Subscription } from 'rxjs';
@@ -17,9 +17,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   theme: ColorTheme;
   themeStateSub: Subscription;
   showBannerTitle: boolean = true;
+  isImgLoaded: boolean = false;
+
+  print() {this.isImgLoaded = true; console.log('load'); this.cdr.detectChanges()}
 
   constructor(
-    private colorThemeService: ColorThemeService
+    private colorThemeService: ColorThemeService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit() {

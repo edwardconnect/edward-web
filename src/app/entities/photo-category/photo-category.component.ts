@@ -11,17 +11,17 @@ export class PhotoCategoryComponent implements OnInit {
     {
       title: 'Travel',
       photoUrl: this.cloudPicUrl +'travel_yjye7f',
-      routerLink: ''
+      routerLink: 'travel'
     },
     {
       title: 'Food',
       photoUrl: this.cloudPicUrl +'food_cbte5j',
-      routerLink: ''
+      routerLink: 'food'
     },
     {
       title: 'Work',
       photoUrl: this.cloudPicUrl +'work_poylvr',
-      routerLink: ''
+      routerLink: 'work'
     }
   ]
 
