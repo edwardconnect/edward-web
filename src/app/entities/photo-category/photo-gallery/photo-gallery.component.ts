@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Location, DOCUMENT } from '@angular/common';
 
-import GalleryPhoto from '../../../shared/models/gallery-photo.model'
+import { GalleryPhoto } from '../../../shared/models/gallery-photo.model'
 
 @Component({
   selector: 'app-photo-gallery',

@@ -8,11 +8,13 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhotoCategoryComponent } from './photo-category/photo-category.component';
 import { PhotoGalleryComponent } from './photo-category/photo-gallery/photo-gallery.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HomeComponent, PhotoCategoryComponent, PhotoGalleryComponent],
   imports: [
     CommonModule,
+    RouterModule,
     CloudinaryModule.forRoot({ Cloudinary }, {
       cloud_name: 'doyouvwrh'
   } as CloudinaryConfiguration),
