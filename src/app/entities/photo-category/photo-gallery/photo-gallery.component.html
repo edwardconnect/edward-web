@@ -1,6 +1,6 @@
 <div *ngIf="galleryPhoto && galleryPhoto.length > 0" class="gallery-container">
     <div *ngFor="let photo of galleryPhoto" class="gallery__img__container">
-        <img class="gallery__img" [ngClass]="{'gallery__img--hidden': photo.isOpen}" src="{{photoUrl + photo.id}}"
+        <img class="gallery__img" [ngClass]="{'gallery__img--hidden': photo.isOpen}" [lazyLoad]="photoUrl + photo.id"
             alt="" (click)="open($event, photo)">
         <img *ngIf="photo.isOpen" class="gallery__img--modal" [style.left.px]="photo.left" [style.top.px]="photo.top"
             [style.width.px]="photo.width" [style.right.px]="photo.right" [style.height.px]="photo.height"

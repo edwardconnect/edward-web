@@ -21,6 +21,10 @@
     .gallery__img__container {
       margin: 0px 20px 30px 20px;
       width: 100%;
+
+      img.ng-lazyloaded {
+        animation: fadein 0.9s;
+      }
     }
 
     .gallery__img--hidden {

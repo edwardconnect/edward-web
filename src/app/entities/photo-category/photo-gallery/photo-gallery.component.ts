@@ -11,9 +11,11 @@ import GalleryPhoto from '../../../shared/models/gallery-photo.model'
   styleUrls: ['./photo-gallery.component.scss']
 })
 export class PhotoGalleryComponent implements OnInit, OnDestroy {
-  photoUrl = 'https://res.cloudinary.com/doyouvwrh/image/upload/w_375,c_scale/v1572539504/edward-web/'
+  photoUrl = 'https://res.cloudinary.com/doyouvwrh/image/upload/w_500,c_scale/v1572539504/edward-web/'
   photoGalleryIds = {
-    travel: ['IMG_0506_boipom', 'bus-wall', 'math', 'math', 'IMG_0506_boipom', 'bus-wall', 'math', 'IMG_0506_boipom', 'bus-wall', 'math']
+    travel: ['travel03_on95lz','travel02_qocdwj','travel01_pkkgcu','IMG_0506_boipom', 'bus-wall'],
+    food: ['food01_hrbrgm', 'food02_vlkyrt','food03_viu0hh','food04_d0ks5p','food05_cnuxts','food06_iqxnls','food07_fyhktv','food08_drpfbx'],
+    work: ['work01_vv5pkj','work02_lwyaoo']
   };
   galleryPhoto: GalleryPhoto[] = [];
   private urlChangeSub: Subscription;
