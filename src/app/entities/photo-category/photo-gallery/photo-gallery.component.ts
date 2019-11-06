@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef, HostListener, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Location, DOCUMENT } from '@angular/common';
@@ -76,8 +76,8 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
 
     // Assign new properties
     setTimeout(() => {
-      photo.top = (window.innerHeight / 2) - (clickedPhoto.height/ 2);
-      console.log('photot TOP '+photo.top)
+      photo.top = (window.innerHeight / 2) - (clickedPhoto.height / 2);
+      console.log('photot TOP ' + photo.top)
       photo.scale = window.innerWidth / clickedPhoto.width;
       photo.borderRadius = 0;
       this.showEffect = true;

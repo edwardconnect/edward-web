@@ -5,14 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { CloudinaryConfiguration, CloudinaryModule } from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhotoCategoryComponent } from './photo-category/photo-category.component';
 import { PhotoGalleryComponent } from './photo-category/photo-gallery/photo-gallery.component';
 import { RouterModule } from '@angular/router';
-import { PhotoModalComponent } from './photo-category/photo-modal/photo-modal.component';
 
 @NgModule({
-  declarations: [HomeComponent, PhotoCategoryComponent, PhotoGalleryComponent, PhotoModalComponent],
+  declarations: [HomeComponent, PhotoCategoryComponent, PhotoGalleryComponent],
   imports: [
     CommonModule,
     RouterModule,
