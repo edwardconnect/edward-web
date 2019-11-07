@@ -27,16 +27,13 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private elementRef: ElementRef,
     private breakpointObserver: BreakpointObserver,
     @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit() {
-    console.log('sadf')
     this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 600px)');
     this.subscribeUrlChange();
-    console.log(this.isSmallScreen);
   }
 
   ngOnDestroy() {
@@ -65,7 +62,8 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
     const targetY = event.target.y;
 
     // Enable fixed photo & Hide original photo
-    this.document.body.classList.add('body--lock');
+    // this.document.body.classList.add('body--lock');
+    this.document.documentElement.classList.add('body--lock');
     this.openOverlay = true;
     photo.done = false;
     photo.isOpen = true;
@@ -107,6 +105,8 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
       photo.isOpen = false;
       this.openOverlay = false;
       this.document.body.classList.remove('body--lock');
+      // this.document.body.classList.add('body--lock');
+      this.document.documentElement.classList.remove('body--lock');
     }, 350)
   }
 }
