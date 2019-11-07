@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Location, DOCUMENT } from '@angular/common';
 
 import GalleryPhoto from '../../../shared/models/gallery-photo.model'
+import { MediaMatcher, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-photo-gallery',
@@ -21,20 +22,21 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   private urlChangeSub: Subscription;
   openOverlay = false;
   showEffect = false;
-  // @HostListener('window:scroll', ['$event'])
-  // check(event) {
-  //   console.log(event.pageYOffset)
-  // }
+  isSmallScreen: boolean;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private elementRef: ElementRef,
+    private breakpointObserver: BreakpointObserver,
     @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit() {
+    console.log('sadf')
+    this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 600px)');
     this.subscribeUrlChange();
+    console.log(this.isSmallScreen);
   }
 
   ngOnDestroy() {
@@ -55,15 +57,21 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
   }
 
   open(event, photo: GalleryPhoto) {
+    // console.log(`Scroll top value : ${this.document.body.scrollTop}`)
+    // console.log(`Photo position Y: ${event.target.y}`);
+    // console.log(`scoll position: ${window.scrollY}`)
+    // console.log(event)
     const clickedPhoto = event.target;
+    const targetY = event.target.y;
 
     // Enable fixed photo & Hide original photo
     this.document.body.classList.add('body--lock');
-    photo.isOpen = true;
     this.openOverlay = true;
+    photo.done = false;
+    photo.isOpen = true;
 
     // set all properties to fixed photo
-    photo.top = clickedPhoto.y;
+    photo.top = targetY - window.scrollY;
     photo.left = clickedPhoto.x;
     photo.width = clickedPhoto.width;
     photo.height = clickedPhoto.height;
@@ -71,15 +79,15 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
     photo.scale = 1;
 
     // Store original photo info
-    photo.originalTop = clickedPhoto.y;
+    photo.originalTop = targetY - window.scrollY;
     photo.originalLeft = clickedPhoto.x;
     photo.originalWidth = clickedPhoto.width;
     photo.originalHeight = clickedPhoto.height;
 
     // Assign new properties
     setTimeout(() => {
+      photo.done = true;
       photo.top = (window.innerHeight / 2) - (clickedPhoto.height / 2);
-      console.log('photot TOP ' + photo.top)
       photo.scale = window.innerWidth / clickedPhoto.width;
       photo.borderRadius = 0;
       this.showEffect = true;
@@ -99,6 +107,6 @@ export class PhotoGalleryComponent implements OnInit, OnDestroy {
       photo.isOpen = false;
       this.openOverlay = false;
       this.document.body.classList.remove('body--lock');
-    }, 300)
+    }, 350)
   }
 }
