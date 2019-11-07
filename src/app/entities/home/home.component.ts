@@ -51,5 +51,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   hideBannerTitle() {
     this.showBannerTitle = false;
+    this.cdr.detectChanges();
   }
 }

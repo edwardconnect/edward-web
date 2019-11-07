@@ -11,6 +11,7 @@ export default class GalleryPhoto {
         public originalTop?: number,
         public originalLeft?: number,
         public originalWidth?: number,
-        public originalHeight?: number
+        public originalHeight?: number,
+        public done?: boolean
     ) { }
 }
